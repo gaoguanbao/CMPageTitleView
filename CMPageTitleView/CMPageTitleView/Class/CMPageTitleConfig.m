@@ -43,19 +43,19 @@
         [self setValue:[mArray copy] forKey:NSStringFromSelector(@selector(cm_titleWidths))];
         
         NSNumber *cm_titlesWidth = [self.cm_titleWidths valueForKeyPath:@"@sum.floatValue"];
-        
         [self setValue:cm_titlesWidth forKey:NSStringFromSelector(@selector(cm_titlesWidth))];
     }
     
 }
 
+- (void)setCm_selectedColor:(UIColor *)cm_selectedColor {
+    _cm_selectedColor = cm_selectedColor;
+    self.cm_underlineColor = cm_selectedColor;
+}
+
 - (void)setCm_selectedFont:(UIFont *)cm_selectedFont {
-    
     _cm_selectedFont = cm_selectedFont;
-    
     self.cm_scale = self.cm_font.pointSize ? cm_selectedFont.pointSize / self.cm_font.pointSize : self.cm_scale;
-    
-    
 }
 
 - (void)setCm_pageTitleViewWidth:(NSNumber *)cm_pageTitleViewWidth {
